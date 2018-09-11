@@ -57,6 +57,9 @@
     </ApplicationDefinition>
     <Compile Include="Comandos\CancelarEdicaoCommand.cs" />
     <Compile Include="Comandos\CarregarReceitaCommand.cs" />
+    <Compile Include="Comandos\DeletarReceitaCommand.cs" />
+    <Compile Include="Comandos\SalvarReceitaCommand.cs" />
+    <Compile Include="Repositorio\ReceitaRepository.cs" />
     <Compile Include="ViewModel\ReceitasDeCervejaViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -100,7 +103,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Repositorio\" />
     <Folder Include="View\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
