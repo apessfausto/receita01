@@ -1,4 +1,5 @@
 ﻿using Receita01.Model;
+using Receita01.Repositorio;
 using Receita01.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace Receita01.Comandos
 
         public bool CanExecute(object parameter)
         {
-            if (!string.IsNullOrEmpty(m_ViewModel.Nome) && !string.IsNullOrEmpty(m_ViewModel.ReceitaTxt) && m_ViewModel.Estilos != null)
+            if (!string.IsNullOrEmpty(m_ViewModel.Nome) && !string.IsNullOrEmpty(m_ViewModel.ReceitaTxt) && m_ViewModel.Estilo != null)
                 return true;
             else
                 return false;           
@@ -37,7 +38,7 @@ namespace Receita01.Comandos
             var receita = new ReceitaDeCerveja();
             receita.Nome = m_ViewModel.Nome;
             receita.ReceitaTxt = m_ViewModel.ReceitaTxt;
-            receita.IdEstilos = m_ViewModel.Estilos;
+            receita.IdEstilo = m_ViewModel.Estilo;
 
             var receitaRepository = new ReceitaRepository(m_ViewModel);
 
@@ -55,7 +56,7 @@ namespace Receita01.Comandos
             m_ViewModel.IdReceita = 0;
             m_ViewModel.Nome = string.Empty;
             m_ViewModel.ReceitaTxt = string.Empty;
-            m_ViewModel.Estilos = null;
+            m_ViewModel.Estilo = null;
         }
     }
 }

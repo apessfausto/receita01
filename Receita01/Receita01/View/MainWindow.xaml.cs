@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Receita01.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace Receita01
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new ReceitasDeCervejaViewModel();
         }
+
     }
 }

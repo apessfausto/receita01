@@ -35,7 +35,7 @@ namespace Receita01.Comandos
 
             m_ViewModel.Nome = receita.Nome;
             m_ViewModel.ReceitaTxt = receita.ReceitaTxt;
-            m_ViewModel.Estilos = receita.IdEstilos;
+            m_ViewModel.Estilo = receita.IdEstilo;
             m_ViewModel.IdReceita = receita.IdReceita;
             m_ViewModel.Receita = null;
         }

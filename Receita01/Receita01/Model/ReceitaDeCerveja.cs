@@ -33,16 +33,16 @@ namespace Receita01.Model
             }
         }
 
-        private Estilos _idEstilos;
+        private Estilo _idEstilo;
 
-        public Estilos IdEstilos
+        public Estilo IdEstilo
         {
-            get { return this._idEstilos; }
+            get { return this._idEstilo; }
             set
             {
-                if (value != _idEstilos)
+                if (value != _idEstilo)
                 {
-                    this._idEstilos = value;
+                    this._idEstilo = value;
                     this.NotfyPropertyChanged("IdEstilos");
                 }
             }

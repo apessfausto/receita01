@@ -1,4 +1,5 @@
-﻿using Receita01.Model;
+﻿using Receita01.Comandos;
+using Receita01.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -24,10 +25,10 @@ namespace Receita01.ViewModel
             }
         }
 
-        private ObservableCollection<Estilos> _listEstilos;
+        private ObservableCollection<Estilo> _listEstilos;
 
 
-        public ObservableCollection<Estilos> ListEstilos
+        public ObservableCollection<Estilo> ListEstilos
         {
             get { return _listEstilos; }
             set
@@ -52,17 +53,17 @@ namespace Receita01.ViewModel
             }
         }
 
-        private Estilos _estilos;
+        private Estilo _estilo;
 
-        public Estilos Estilos
+        public Estilo Estilo
         {
-            get { return _estilos; }
+            get { return _estilo; }
             set
             {
-                if(value != _estilos)
+                if(value != _estilo)
                 {
-                    _estilos = value;
-                    this.NotfyPropertyChanged("Estilos");
+                    _estilo = value;
+                    this.NotfyPropertyChanged("Estilo");
                 }
             }
         }
@@ -120,7 +121,7 @@ namespace Receita01.ViewModel
         public ICommand SalvarReceitaCommand { get; set; }
         public ICommand DeletarReceitaCommand { get; set; }
         public ICommand CarregarReceitaCommand { get; set; }
-        public ICommand CancelarEdicaoReceitaCommand { get; set; }
+        public ICommand CancelarEdicaoCommand { get; set; }
 
 
         private void Initialize()
@@ -128,23 +129,25 @@ namespace Receita01.ViewModel
             this.SalvarReceitaCommand = new SalvarReceitaCommand(this);
             this.DeletarReceitaCommand = new DeletarReceitaCommand(this);
             this.CarregarReceitaCommand = new CarregarReceitaCommand(this);
-            this.CancelarEdicaoReceitaCommand = new CancelarEdicaoReceitaCommand(this);
+            this.CancelarEdicaoCommand = new CancelarEdicaoCommand(this);
 
-            this._listReceitasDeCerveja = new ObservableCollection<ReceitaDeCerveja>;
-            this._listEstilos = new ObservableCollection<Estilos>;
+            this._listReceitasDeCerveja = new ObservableCollection<ReceitaDeCerveja>();
+            this._listEstilos = new ObservableCollection<Estilo>();
 
-            //Lista de Estilos
+            //Lista de Estilo
 
-            _listEstilos.Add(new Estilos(1, "Pale Ale"));
-            _listEstilos.Add(new Estilos(2, "Weiss"));
-            _listEstilos.Add(new Estilos(3, "IPA"));
-            _listEstilos.Add(new Estilos(4, "APA"));
-            _listEstilos.Add(new Estilos(5, "Stout"));
-            _listEstilos.Add(new Estilos(6, "Porter"));
-            _listEstilos.Add(new Estilos(7, "Sour"));
-            _listEstilos.Add(new Estilos(8, "Pilsner"));
-            _listEstilos.Add(new Estilos(9, "Trappist"));
-            _listEstilos.Add(new Estilos(10, "Witbier"));
+            _listEstilos.Add(new Estilo(1, "Pale Ale"));
+            _listEstilos.Add(new Estilo(2, "Weiss"));
+            _listEstilos.Add(new Estilo(3, "IPA"));
+            _listEstilos.Add(new Estilo(4, "APA"));
+            _listEstilos.Add(new Estilo(5, "Stout"));
+            _listEstilos.Add(new Estilo(6, "Porter"));
+            _listEstilos.Add(new Estilo(7, "Sour"));
+            _listEstilos.Add(new Estilo(8, "Pilsner"));
+            _listEstilos.Add(new Estilo(9, "Trappist"));
+            _listEstilos.Add(new Estilo(10, "Witbier"));
+            _listEstilos.Add(new Estilo(11, "Irish Red Ale"));
+
 
         }
 

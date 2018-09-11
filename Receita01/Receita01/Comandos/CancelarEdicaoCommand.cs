@@ -19,7 +19,7 @@ namespace Receita01.Comandos
 
         public bool CanExecute(object parameter)
         {
-            if(!string.IsNullOrEmpty(m_ViewModel.Nome) && !string.IsNullOrEmpty(m_ViewModel.ReceitaTxt) && m_ViewModel.Estilos != null)
+            if(!string.IsNullOrEmpty(m_ViewModel.Nome) && !string.IsNullOrEmpty(m_ViewModel.ReceitaTxt) && m_ViewModel.Estilo != null)
                 return true;
             else
             return false;
@@ -35,7 +35,7 @@ namespace Receita01.Comandos
         {
             m_ViewModel.Nome = string.Empty;
             m_ViewModel.ReceitaTxt = string.Empty;
-            m_ViewModel.Estilos = null;
+            m_ViewModel.Estilo = null;
             m_ViewModel.IdReceita = 0;
 
         }

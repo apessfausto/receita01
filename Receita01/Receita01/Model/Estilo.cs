@@ -10,28 +10,28 @@ namespace Receita01.Model
     /// Criação da classe que irá compor 
     /// os estilos de cerveja selecionados ao escrever a receita.
     /// </summary>
-    public class Estilos
+    public class Estilo
     {
 
 
-        public Estilos(int idEstilos, string nome)
+        public Estilo(int idEstilo, string nome)
         {
-            _idEstilos = idEstilos;
+            _idEstilo = idEstilo;
             _nome = nome;
         }
 
 
 
 
-        private int _idEstilos;
-        public int IdEstilos
+        private int _idEstilo;
+        public int IdEstilo
         {
-            get { return this._idEstilos; }
+            get { return this._idEstilo; }
             set
             {
-                if (value != _idEstilos)
+                if (value != _idEstilo)
                 {
-                    this._idEstilos = value;
+                    this._idEstilo = value;
                 }
             }
         }

@@ -1,4 +1,5 @@
-﻿using Receita01.ViewModel;
+﻿using Receita01.Repositorio;
+using Receita01.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,7 +38,7 @@ namespace Receita01.Comandos
 
             m_ViewModel.Nome = string.Empty;
             m_ViewModel.ReceitaTxt = string.Empty;
-            m_ViewModel.Estilos = null;
+            m_ViewModel.Estilo = null;
             m_ViewModel.IdReceita = 0;
         }
     }
