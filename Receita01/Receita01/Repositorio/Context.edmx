@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FAUSTO_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'FAUSTO_DB.dbo.tb_receitas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tb_receitas">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="nome_receita" />
+            <PropertyRef Name="estilo" />
+            <PropertyRef Name="receita_text" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nome_receita" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estilo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="receita_text" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="FAUSTO_DBModelStoreContainer">
+          <EntitySet Name="tb_receitas" EntityType="Self.tb_receitas" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[tb_receitas].[id] AS [id], 
+[tb_receitas].[nome_receita] AS [nome_receita], 
+[tb_receitas].[estilo] AS [estilo], 
+[tb_receitas].[receita_text] AS [receita_text]
+FROM [dbo].[tb_receitas] AS [tb_receitas]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FAUSTO_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tb_receitas">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="nome_receita" />
+            <PropertyRef Name="estilo" />
+            <PropertyRef Name="receita_text" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome_receita" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estilo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="receita_text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="FAUSTO_DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tb_receitas" EntityType="Self.tb_receitas" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FAUSTO_DBModelStoreContainer" CdmEntityContainer="FAUSTO_DBEntities">
+          <EntitySetMapping Name="tb_receitas">
+            <EntityTypeMapping TypeName="FAUSTO_DBModel.tb_receitas">
+              <MappingFragment StoreEntitySet="tb_receitas">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nome_receita" ColumnName="nome_receita" />
+                <ScalarProperty Name="estilo" ColumnName="estilo" />
+                <ScalarProperty Name="receita_text" ColumnName="receita_text" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

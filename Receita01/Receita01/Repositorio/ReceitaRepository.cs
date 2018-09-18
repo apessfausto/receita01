@@ -11,35 +11,24 @@ namespace Receita01.Repositorio
 {
     public class ReceitaRepository
     {
-        private ReceitasDeCervejaViewModel m_ViewModel;
-
-        public ReceitaRepository (ReceitasDeCervejaViewModel viewModel)
+        public int salvarR(tb_receitas receita)
         {
-            m_ViewModel = viewModel;
+            using (FAUSTO_DBEntities cntx = new FAUSTO_DBEntities())
+            {
+                cntx.tb_receitas.Add(receita);
+                return cntx.SaveChanges();
+
+            }
         }
 
-        public void Insert (ReceitaDeCerveja entity)
+        public int delete(tb_receitas receita)
         {
-            ObservableCollection<ReceitaDeCerveja> list = m_ViewModel.ListReceitasDeCerveja;
-            list.Add(entity);
-            m_ViewModel.ListReceitasDeCerveja = list;
-        }
+            using (FAUSTO_DBEntities cntx = new FAUSTO_DBEntities())
+            {
+                cntx.tb_receitas.Remove(receita);
+                return cntx.SaveChanges();
 
-        public void Delete (ReceitaDeCerveja entity)
-        {
-            ObservableCollection<ReceitaDeCerveja> list = m_ViewModel.ListReceitasDeCerveja;
-            list.Remove(entity);
-            m_ViewModel.ListReceitasDeCerveja = list;
+            }
         }
-
-        public void Update (ReceitaDeCerveja entity)
-        {
-            ObservableCollection<ReceitaDeCerveja> list = m_ViewModel.ListReceitasDeCerveja;
-            ReceitaDeCerveja receita = m_ViewModel.ListReceitasDeCerveja.FirstOrDefault(x => x.IdReceita == entity.IdReceita);
-            list.Remove(receita);
-            list.Add(entity);
-            m_ViewModel.ListReceitasDeCerveja = list;
-        }
-
     }
 }
